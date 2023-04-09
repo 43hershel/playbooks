@@ -1,1 +1,14 @@
-
+- name: Playbook Name
+  hosts: target-group
+  become: yes
+  vars:
+    var1: value1
+    var2: value2
+  tasks:
+    - name: Task 1 Name
+      <module>: <arguments>
+      <module>: <arguments>
+      ...
+    - name: Task 2 Name
+      <module>: <arguments>
+      <module>: <arguments>
