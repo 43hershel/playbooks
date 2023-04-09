@@ -1,14 +1,25 @@
-- name: Playbook Name
-  hosts: target-group
-  become: yes
-  vars:
-    var1: value1
-    var2: value2
+---
+- name: Update and install packages on Fedora server
+  hosts: 192.168.0.2X
+  become: true
+  
   tasks:
-    - name: Task 1 Name
-      <module>: <arguments>
-      <module>: <arguments>
-      ...
-    - name: Task 2 Name
-      <module>: <arguments>
-      <module>: <arguments>
+    - name: Update system
+      dnf:
+        name: '*'
+        state: latest
+    
+    - name: Install packages
+      dnf:
+        name:
+          - plexmediaserver
+          - syncthing
+          - docker
+          - qbittorrent-nox
+        state: latest
+    
+    - name: Download GitHub files
+      get_url:
+        url: "https://github.com/user/repo/archive/master.zip"
+        dest: "/tmp/master.zip"
+        mode: '0644'
