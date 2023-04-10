@@ -1,0 +1,74 @@
+---
+- name: Install and update packages on Fedora Server
+  hosts: WorkLinux
+  become: true
+
+  tasks:
+    - name: Update packages
+      dnf:
+        name: "*"
+        state: latest
+
+    - name: Install packages
+      dnf:
+        name: "{{ item }}"
+        state: latest
+      loop:
+        - i3
+        - i3status
+        - kitty 
+        - rofi
+        - syncthing 
+        - lxappearance 
+        - htop
+        - zsh
+        - neofetch
+        - git
+        - thunar
+        - feh
+        - xrandr
+        - docker
+        - docker-compose
+        - nvim 
+
+    - name: Enabling services
+      systemd:
+        name: "{{ item }}"
+        state: started
+        enabled: yes
+      loop: 
+        - syncthing@castro
+        - docker 
+
+    - name: Retrieve dotfiles
+      git: 
+        repo: https://github.com/43hershel/dotfiles
+        dest: $USER/
+
+    - name: Applying dotfiles
+      shell: | 
+        cd ~/.config/;
+        mkdir i3;
+        cd  ~/dotfiles/i3;
+        sudo mv config config.save i3status.conf ~/.config/i3;
+        cd ~/.config/kitty;
+        rm kitty.conf; 
+        cd ~/dotfiles/kitty/;
+        unzip kitty-themes.zip -d ~/.config/kitty;
+        sudo mv kitty.conf theme.conf ~/.config/kitty;
+        cd ~/dotfiles; 
+        unzip JetBrainsMono-2.304.zip;
+        sudo mv fonts /usr/share/fonts;
+        cd ~/dotfiles;
+        mv pexels-eberhard-grossgasteiger-691668.jpg ~/Imágenes/;
+        cd ~/config;
+        mkdir nvim;
+        cd ~/dotfiles/nvim;
+        mv init.lua ~/config/nvim;
+
+    - name: Installing Oh My Zsh
+      shell: | 
+        sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)";    
+
+
+           
