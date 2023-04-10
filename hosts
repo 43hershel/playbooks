@@ -1,2 +1,0 @@
-[servers]
-bagira =192.168.0. ansible_user=castro ansible_connection=ssh
