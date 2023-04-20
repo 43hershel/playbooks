@@ -29,7 +29,6 @@
         - feh
         - xrandr
         - docker
-        - docker-compose
         - neovim
         - tmux 
   
