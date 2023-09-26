@@ -1,0 +1,17 @@
+---
+- name: macOS "maverick" set-up playbook
+  hosts: localhost  # Replace 'macs' with the appropriate host or group from your inventory file
+  gather_facts: no
+
+  roles: 
+    - homebrew
+    - packages
+    - app_store
+    - terminal
+    - geerlingguy.mac.dock
+
+    
+  
+  
+
+

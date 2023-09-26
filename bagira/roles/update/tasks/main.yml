@@ -1,0 +1,5 @@
+---
+- name: Update the system
+  dnf:
+    name: '*'
+    state: latest

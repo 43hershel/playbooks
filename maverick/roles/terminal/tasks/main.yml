@@ -1,0 +1,10 @@
+---
+  - name: Determine user's home directory
+    command: echo $HOME
+    register: user_home
+
+  - name: Download and install Oh My Zsh
+    command: sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+    args:
+      creates: "{{ user_home.stdout }}/.oh-my-zsh"  # Check if Oh My Zsh is already installed
+

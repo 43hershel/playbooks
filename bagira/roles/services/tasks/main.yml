@@ -1,0 +1,21 @@
+---
+- name: Start and Enable Services
+  become: yes
+
+- name: Start and enable SSH service
+  service:
+    name: sshd
+    state: started
+    enabled: yes
+
+- name: Start and enable Docker service
+  service:
+    name: docker
+    state: started
+    enabled: yes
+
+- name: Start and enable Tailscale service
+  systemd:
+    name: tailscale
+    enabled: yes
+    state: started

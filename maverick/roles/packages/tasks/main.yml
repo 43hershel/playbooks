@@ -1,0 +1,41 @@
+---
+
+    - name: Installing MAS
+      community.general.homebrew:
+        name: mas
+        state: present    
+
+    - name: Installing Spotify
+      community.general.homebrew_cask:
+        name: spotify
+        state: present
+
+    - name: Installing qbittorrent
+      community.general.homebrew_cask:
+        name: qbittorrent
+        state: present
+
+    - name: Installing Discord
+      community.general.homebrew_cask:
+        name: discord
+        state: present     
+
+    - name: Installing Docker
+      community.general.homebrew:
+        name: docker
+        state: present    
+
+    - name: Installing Tmux
+      community.general.homebrew:
+        name: tmux
+        state: present  
+
+    - name: Installing Neovim
+      community.general.homebrew:
+        name: neovim
+        state: present
+
+    - name: Installing Syncthing
+      community.general.homebrew_cask:
+        name: syncthing  
+        state: present

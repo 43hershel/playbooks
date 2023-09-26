@@ -1,0 +1,40 @@
+---
+  - name: Installing DaVinci Resolve 
+    community.general.mas:
+      id: 571213070
+      state: present
+
+  - name: Installing Tailscale
+    community.general.mas:
+      id: 1475387142
+      state: present
+
+  - name: Installing Bitwarden
+    community.general.mas:
+      id: 1352778147
+      state: present
+
+  - name: Installing Telegram Lite
+    community.general.mas:
+      id: 946399090 
+      state: present
+
+  - name: Installing Slack
+    community.general.mas:
+      id: 803453959
+      state: present
+
+  - name: Install Pages
+    community.general.mas:
+      id: 409201541
+      state: present
+
+  - name: Install Numbers
+    community.general.mas:
+      id: 409203825
+      state: present
+
+  - name: Install Keynote
+    community.general.mas:
+      id: 409183694
+      state: present

@@ -1,0 +1,108 @@
+---
+- name: Install and update packages on Fedora Workstation
+  hosts: master
+  become: true
+ 
+  tasks:
+    - name: Updating packages
+      dnf:
+        name: "*"
+        state: latest
+
+    - name: Installing packages
+      dnf:
+        name: "{{ item }}"
+        state: latest
+      loop:
+        - firefox
+        - i3
+        - i3status
+        - kitty 
+        - rofi
+        - syncthing 
+        - lxappearance 
+        - htop
+        - zsh
+        - neofetch
+        - git
+        - thunar
+        - feh
+        - xrandr
+        - docker
+        - neovim
+        - tmux 
+  
+    - name: Enabling services
+      systemd:
+        name: "{{ item }}"
+        state: started
+        enabled: yes
+      become: true
+      loop: 
+        - syncthing@castro
+        - docker 
+
+    - name: Retrieving dotfiles
+      git: 
+        repo: https://github.com/43hershel/dotfiles
+        dest: "/home/castro/dotfiles/"
+
+    - name: Changing permissions
+      file:
+        path: "/home/castro/dotfiles/"
+        mode: '0755'
+        state: directory
+  
+    - name: Copying i3 files
+      copy:
+        src: /home/castro/dotfiles/i3
+        dest: /home/castro/.config/
+        owner: castro
+        group: castro
+        mode: "0700"
+        remote_src: yes
+  
+    - name: Copying kitty files
+      copy:
+        src: /home/castro/dotfiles/kitty
+        dest: /home/castro/.config/
+        owner: castro
+        group: castro
+        mode: "0700"
+        remote_src: yes
+
+
+    - name: Copying Wallpaper 
+      copy:
+        src: /home/castro/dotfiles/pexels-eberhard-grossgasteiger-691668.jpg
+        dest: /home/castro/Imágenes/
+        owner: castro
+        group: castro
+        mode: "0700"
+        remote_src: yes
+
+
+    - name: Copying nvim files
+      copy:
+        src: /home/castro/dotfiles/nvim
+        dest: /home/castro/.config/
+        owner: castro
+        group: castro
+        mode: "0700"
+        remote_src: yes
+
+    - name: Unzip file
+      unarchive:
+        src: /home/castro/dotfiles/JetBrainsMono-2.304.zip
+        dest: /usr/share/fonts/
+        owner: root
+        group: root
+        mode: "0755"
+        remote_src: yes
+
+    - name: Installing Oh My Zsh
+      shell: | 
+        sh -c "$(curl -fsSL https:/raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)";    
+
+
+           

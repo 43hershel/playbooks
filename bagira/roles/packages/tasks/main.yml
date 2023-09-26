@@ -1,0 +1,24 @@
+- name: Install required packages
+  dnf:
+    name: "{{ item }}"
+    state: present
+  loop:
+    - python3
+    - htop
+    - docker
+    - git
+    - neovim
+
+- name: Install Tailscale
+  command: curl -fsSL https://pkgs.tailscale.com/stable/fedora/tailscale.repo | sudo tee /etc/yum.repos.d/tailscale.repo
+
+- name: Install LazyDocker
+  command: curl -s https://raw.githubusercontent.com/jesseduffield/lazydocker/master/scripts/install_update_linux.sh | bash
+
+- name: Clone Obsidian Vault Backup Git Repository
+  git:
+    repo: https://github.com/yourusername/obsidian-vault-backup.git
+    dest: /path/to/obsidian-vault-backup/repo
+  # You can specify the destination path where you want to clone the repository.
+
+# Clone 2FA and SSH keys repositories here if needed

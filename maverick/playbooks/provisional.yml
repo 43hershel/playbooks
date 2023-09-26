@@ -1,0 +1,40 @@
+    - name: Installing Brave Browser
+      community.general.homebrew_cask:
+        name: brave-browser
+        state: present
+
+
+
+    - name: Installing Obsidian
+      community.general.homebrew_cask:
+        name: obsidian
+        state: present
+
+
+    - name: Installing Brave Browser
+      community.general.homebrew_cask:
+        name: brave-browser
+        state: present
+
+
+  
+    - name: Installing Visual Studio Code
+      community.general.homebrew_cask:
+        name: visual-studio-code  
+        state: present
+
+    - name: Installing Syncthing
+      community.general.homebrew_cask:
+        name: syncthing  
+        state: present
+  
+    - name: Installing Tiles
+      community.general.homebrew_cask:
+        name: tiles
+        state: present
+  
+
+    - name: Installing Plexamp
+      community.general.homebrew_cask:
+        name: plexamp
+        state: present

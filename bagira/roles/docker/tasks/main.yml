@@ -1,0 +1,11 @@
+- name: Clone Git Repositories
+  tasks:
+    - name: Clone Docker Compose Git Repository
+      git:
+        repo: https://github.com/yourusername/docker-compose-repo.git
+        dest: /path/to/docker-compose/repo
+      # You can specify the destination path where you want to clone the repository.
+
+- name: Executing docker compose files 
+  command:  
+

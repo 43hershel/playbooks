@@ -1,0 +1,16 @@
+---
+- name: Bagira restore playbook
+  hosts: localhost
+  become: yes  # Run tasks with sudo
+
+roles: 
+  - update
+  - packages
+  - services 
+  - docker
+
+
+
+
+
+
