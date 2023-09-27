@@ -39,3 +39,13 @@
       community.general.homebrew_cask:
         name: syncthing  
         state: present
+
+    - name: Installing AppCleaner
+      community.general.homebrew_cask:
+        name: appcleaner  
+        state: present
+
+    - name: Installing Cyberduck
+      community.general.homebrew_cask:
+        name: cyberduck  
+        state: present

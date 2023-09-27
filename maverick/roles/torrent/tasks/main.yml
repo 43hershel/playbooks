@@ -8,3 +8,11 @@
 - name: Downloading Transmit 5 
   command: open -b org.qbittorrent.qBittorrent "magnet:?xt=urn:btih:1519d658812d5643b1b8671231b35e8a6b3c844a"
 
+- name: Mount the .dmg file
+  community.general.osx_command: hdiutil attach /Users/castro/Downloads/Transmit_5.10.0_Torrentmac.net.dmg
+
+- name: Copying apps
+  command: cp -R /Volumes/Transmit/Transmit5.app /Applications/
+    
+
+
