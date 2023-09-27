@@ -4,14 +4,14 @@
   gather_facts: no
 
   roles: 
-    - homebrew
-    - packages
-    - app_store
-    - terminal
-    - geerlingguy.mac.dock
+    - torrent
+#    - homebrew
+#    - packages
+#    - app_store
+#    - terminal
+#    - geerlingguy.mac.dock
 
-    
-  
+
   
 
 

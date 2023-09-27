@@ -1,0 +1,10 @@
+---
+- name: Downloading Alfred 
+  command: open -b org.qbittorrent.qBittorrent "magnet:?xt=urn:btih:e8763ff94b398899c087663afb78a5ef14db7ef6"
+
+- name: Downloading Things 3 
+  command: open -b org.qbittorrent.qBittorrent "magnet:?xt=urn:btih:ca18167e4c4bd5aee45a3b972df0947d023f77d3"
+
+- name: Downloading Transmit 5 
+  command: open -b org.qbittorrent.qBittorrent "magnet:?xt=urn:btih:1519d658812d5643b1b8671231b35e8a6b3c844a"
+
