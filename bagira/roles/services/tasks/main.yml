@@ -1,7 +1,4 @@
 ---
-- name: Start and Enable Services
-  become: yes
-
 - name: Start and enable SSH service
   service:
     name: sshd

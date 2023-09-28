@@ -1,13 +1,13 @@
 ---
 - name: Bagira restore playbook
-  hosts: localhost
+  hosts: my_vm
   become: yes  # Run tasks with sudo
 
-roles: 
-  - update
-  - packages
-  - services 
-  - docker
+  roles: 
+    - update
+    - packages
+    - services 
+#    - docker
 
 
 

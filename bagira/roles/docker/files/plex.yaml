@@ -1,0 +1,17 @@
+---
+version: "2.1"
+services:
+plex:
+image: lscr.io/linuxserver/plex:latest
+container_name: plex # <-- name of the container
+network_mode: host # <-- mode is running at. host = uses the servers main network config
+environment:
+- PUID=1000 # <-- how the container runs, permissions as user, NOT AS ROOT
+- PGID=1000
+- TZ=Europe/Madrid # <-- timezone
+- VERSION=docker
+- PLEX_CLAIM= #https://www.plex.tv/claim/ <-- this token is used for claiming the server. Just write whatever the website generate in here.
+volumes:
+- /mnt/docker:/config # <-- where you mount you volume for config
+- /mnt:/media # <-- where you mount you volume for config
+restart: unless-stopped

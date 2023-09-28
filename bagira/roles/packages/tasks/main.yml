@@ -1,3 +1,4 @@
+---
 - name: Install required packages
   dnf:
     name: "{{ item }}"
@@ -12,13 +13,26 @@
 - name: Install Tailscale
   command: curl -fsSL https://pkgs.tailscale.com/stable/fedora/tailscale.repo | sudo tee /etc/yum.repos.d/tailscale.repo
 
-- name: Install LazyDocker
-  command: curl -s https://raw.githubusercontent.com/jesseduffield/lazydocker/master/scripts/install_update_linux.sh | bash
+- name: Create Documents directory
+  file:
+    path: "/home/castro/Documents"
+    state: directory
+    owner: castro
+    group: castro
+    mode: '0755'
 
-- name: Clone Obsidian Vault Backup Git Repository
-  git:
-    repo: https://github.com/yourusername/obsidian-vault-backup.git
-    dest: /path/to/obsidian-vault-backup/repo
-  # You can specify the destination path where you want to clone the repository.
+- name: Create Downloads directory
+  file:
+    path: "/home/castro/Downloads"
+    state: directory
+    owner: castro
+    group: castro
+    mode: '0755'
 
-# Clone 2FA and SSH keys repositories here if needed
+- name: Create notes directory
+  file:
+    path: "/home/castro/notes"
+    state: directory
+    owner: castro
+    group: castro
+    mode: '0755'
