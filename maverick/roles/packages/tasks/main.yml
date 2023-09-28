@@ -5,6 +5,11 @@
         name: mas
         state: present    
 
+    - name: Installing Brave Browser
+      community.general.homebrew:
+        name: brave-browser
+        state: present  
+
     - name: Installing Spotify
       community.general.homebrew_cask:
         name: spotify
