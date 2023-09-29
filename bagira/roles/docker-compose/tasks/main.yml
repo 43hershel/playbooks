@@ -5,10 +5,10 @@
     dest: /home/castro/Documents
 
 - name: Executing Syncthing Docker Compose 
-  command: docker-compose -f /home/castro/Documents/syncthing.yaml up -d
+  command: docker-compose -f /home/castro/Documents/syncthing.yml up -d
 
 - name: Execute qbittorrent Docker Compose 
   command: docker-compose -f /home/castro/Documents/qbittorrent.yml up -d
 
 - name: Executing Plex Docker Compose 
-  command: docker-compose -f /home/castro/Documents/plex.yaml up -d
+  command: docker-compose -f /home/castro/Documents/plex.yml up -d
