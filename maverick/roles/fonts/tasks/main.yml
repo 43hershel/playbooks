@@ -1,0 +1,11 @@
+--- 
+- name: Adding fonts to homebrew
+  command: brew tap homebrew/cask-fonts
+
+- name: Check if JetBrains Mono is installed on macOS
+  command: ls ~/Library/Fonts/JetBrainsMono[wght].ttf
+  register: font_check
+
+- name: Install JetBrains Mono using Homebrew Cask
+  command: brew install --cask font-jetbrains-mono
+  when: font_check.rc != 0
