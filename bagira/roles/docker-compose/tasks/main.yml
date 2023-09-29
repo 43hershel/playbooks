@@ -1,0 +1,14 @@
+---
+- name: Cloning docker-compose repositorie
+  git: 
+    repo: https://github.com/43hershel/docker-compose
+    dest: /home/castro/Documents
+
+- name: Executing Syncthing Docker Compose 
+  command: docker-compose -f /home/castro/Documents/syncthing.yaml up -d
+
+- name: Execute qbittorrent Docker Compose 
+  command: docker-compose -f /home/castro/Documents/qbittorrent.yml up -d
+
+- name: Executing Plex Docker Compose 
+  command: docker-compose -f /home/castro/Documents/plex.yaml up -d

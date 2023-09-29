@@ -7,11 +7,10 @@
     - python3
     - htop
     - docker
+    - docker-compose
     - git
     - neovim
-
-- name: Install Tailscale
-  command: curl -fsSL https://pkgs.tailscale.com/stable/fedora/tailscale.repo | sudo tee /etc/yum.repos.d/tailscale.repo
+    - tailscale
 
 - name: Create Documents directory
   file:

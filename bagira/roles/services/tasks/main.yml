@@ -13,6 +13,7 @@
 
 - name: Start and enable Tailscale service
   systemd:
-    name: tailscale
-    enabled: yes
+    name: tailscaled
     state: started
+    enabled: yes
+    

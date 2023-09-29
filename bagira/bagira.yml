@@ -7,7 +7,8 @@
     - update
     - packages
     - services 
-#    - docker
+    - docker
+    - docker-compose
 
 
 
