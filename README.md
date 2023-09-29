@@ -18,7 +18,9 @@ My playbook is based on the M1 13" Macbook Pro. Things are suited for the ARM ar
 2. Ensure Apple's command line tools are installed (`xcode-select --install` to launch the installer).
 
 3. Install and upgrade python and ansible. 
-    1. Run the following command to add Python 3 to your $PATH: export PATH="$HOME/Library/Python/3.9/bin:/opt/homebrew/bin:$PATH"
-    2. Upgrade Pip: sudo pip3 install --upgrade pip
-    3. Install Ansible: pip3 install ansible
+    1. Run the following command to add Python 3 to your `$PATH: export PATH="$HOME/Library/Python/3.9/bin:/opt/homebrew/bin:$PATH"`
+    2. Upgrade Pip: `sudo pip3 install --upgrade pip`
+    3. Install Ansible: `pip3 install ansible`
+
+
 
