@@ -2,6 +2,7 @@
 - name: macOS "maverick" set-up playbook
   hosts: localhost 
   gather_facts: no
+  ignore_errors: yes
 
   roles: 
     - homebrew
