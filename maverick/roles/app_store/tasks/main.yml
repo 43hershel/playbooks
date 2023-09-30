@@ -24,17 +24,22 @@
       id: 803453959
       state: present
 
-  - name: Install Pages
+  - name: Installing Pages
     community.general.mas:
       id: 409201541
       state: present
 
-  - name: Install Numbers
+  - name: Installing Numbers
     community.general.mas:
       id: 409203825
       state: present
 
-  - name: Install Keynote
+  - name: Installing Keynote
     community.general.mas:
       id: 409183694
+      state: present
+
+  - name: Installing Spark
+    community.general.mas:
+      id: 1176895641
       state: present
