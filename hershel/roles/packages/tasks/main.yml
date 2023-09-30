@@ -10,6 +10,7 @@
     - neovim
     - docker
     - docker compose
+    - tailscale
   tags: software_install
 
 - name: Install VirtualBox
