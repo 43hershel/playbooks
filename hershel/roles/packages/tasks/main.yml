@@ -11,6 +11,7 @@
     - docker
     - docker compose
     - tailscale
+    - python3
   tags: software_install
 
 - name: Install VirtualBox
