@@ -7,3 +7,6 @@
   roles: 
     - update
     - packages
+    - services
+    - terminal
+    - fonts

@@ -1,0 +1,6 @@
+---
+- name: Install JetBrains Mono font
+  apt:
+    name: fonts-jetbrains-mono
+    state: present
+
