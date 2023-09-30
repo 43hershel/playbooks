@@ -1,0 +1,9 @@
+--- 
+- name: Setting up Hershel
+  hosts: localhost 
+  gather_facts: no
+  ignore_errors: yes
+
+  roles: 
+    - update
+    - packages

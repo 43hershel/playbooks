@@ -1,0 +1,19 @@
+---
+- name: Install required packages
+  apt:
+    name: "{{ item }}"
+    state: present
+  loop:
+    - brave-browser
+    - spotify-client
+    - code  # VSCode
+    - neovim
+    - docker
+    - docker compose
+  tags: software_install
+
+- name: Install VirtualBox
+  apt:
+    name: virtualbox
+    state: present
+  tags: software_install

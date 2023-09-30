@@ -1,0 +1,12 @@
+---
+- name: Update APT package cache
+  apt:
+    update_cache: yes
+  tags: system_update
+
+- name: Upgrade all packages
+  apt:
+    upgrade: safe
+    autoremove: yes
+    autoclean: yes
+  tags: system_update
