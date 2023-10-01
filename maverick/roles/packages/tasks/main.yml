@@ -53,3 +53,8 @@
       community.general.homebrew_cask:
         name: cyberduck  
         state: present
+
+    - name: Installing OBS
+      community.general.homebrew_cask:
+        name: obs  
+        state: present

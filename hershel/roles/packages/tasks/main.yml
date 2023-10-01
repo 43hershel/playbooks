@@ -1,21 +1,39 @@
 ---
-- name: Install required packages
-  apt:
-    name: "{{ item }}"
+- name: Add Brave Browser repository
+  apt_repository:
+    repo: "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] https://brave-browser-apt-release.s3.brave.com/ stable main"
     state: present
-  loop:
-    - brave-browser
-    - spotify-client
-    - code  # VSCode
-    - neovim
-    - docker
-    - docker compose
-    - tailscale
-    - python3
-  tags: software_install
 
-- name: Install VirtualBox
-  apt:
-    name: virtualbox
+- name: Import Brave Browser GPG key
+  apt_key:
+    url: https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
     state: present
-  tags: software_install
+
+- name: Update package list
+  apt:
+    update_cache: yes
+
+- name: Install Brave Browser
+  apt:
+    name: brave-browser
+    state: present
+
+
+- name: Import Spotify GPG key
+  command: curl -sS https://download.spotify.com/debian/pubkey_7A3A762FAFD4A51F.gpg | sudo gpg --dearmor --yes -o /etc/apt/trusted.gpg.d/spotify.gpg && echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
+
+- name: Install Spotify
+  command: sudo apt-get update && sudo apt-get install spotify-client
+
+
+- name: Install Visual Studio Code
+  command: sudo apt-get install wget gpg && wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg && sudo install -D -o root -g root -m 644 packages.microsoft.gpg /etc/apt/keyrings/packages.microsoft.gpg && sudo sh -c 'echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/keyrings/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" > /etc/apt/sources.list.d/vscode.list' && rm -f packages.microsoft.gpg
+
+- name: Installing Visual Studio Code
+  command: sudo apt install apt-transport-https && sudo apt update && sudo apt install code # or code-insiders
+
+- name: Download and install Tailscale
+  command: curl -fsSL https://pkgs.tailscale.com/stable/ubuntu/lunar.noarmor.gpg | sudo tee /usr/share/keyrings/tailscale-archive-keyring.gpg >/dev/null && curl -fsSL https://pkgs.tailscale.com/stable/ubuntu/lunar.tailscale-keyring.list | sudo tee /etc/apt/sources.list.d/tailscale.list
+
+- name: Install Tailscale
+  command: sudo apt-get && sudo apt-get install tailscale

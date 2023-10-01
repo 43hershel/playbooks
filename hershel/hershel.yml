@@ -1,7 +1,8 @@
 --- 
 - name: Setting up Hershel
-  hosts: localhost 
-  gather_facts: no
+  hosts: hershel 
+  gather_facts: yes
+  become: yes
   ignore_errors: yes
 
   roles: 
