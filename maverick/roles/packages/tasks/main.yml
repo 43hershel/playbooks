@@ -58,3 +58,8 @@
       community.general.homebrew_cask:
         name: obs  
         state: present
+
+    - name: Installing lf
+      community.general.homebrew:
+        name: lf  
+        state: present
