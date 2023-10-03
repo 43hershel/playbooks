@@ -24,6 +24,7 @@ My playbook is based on the M1 13" Macbook Pro. Things are suited for the ARM ar
     4. Install Ansible galaxy roles with the `requirements.yml` file. 
         `ansible-galaxy role install -r requirements.yml`
 
+4. Execute mac_setup.yml. (Ensure the roles are not commented.)
 
 
 
