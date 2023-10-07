@@ -1,4 +1,7 @@
 ---
+- name: Adding Tailscale repo 
+  command: sudo dnf config-manager --add-repo https://pkgs.tailscale.com/stable/fedora/tailscale.repo
+
 - name: Install required packages
   dnf:
     name: "{{ item }}"

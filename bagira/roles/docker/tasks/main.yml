@@ -12,12 +12,12 @@
     
 - name: Download LazyDocker
   get_url:
-    url: https://github.com/jesseduffield/lazydocker/releases/download/v0.21.1/lazydocker_0.21.1_Darwin_x86_64.tar.gz
-    dest: /tmp/lazydocker_0.21.1_Linux_arm64.tar.gz
+    url: https://github.com/jesseduffield/lazydocker/releases/download/v0.21.1/lazydocker_0.21.1_Linux_x86.tar.gz
+    dest: /home/castro/lazydocker_0.21.1_Linux_arm64.tar.gz
 
 - name: Extract LazyDocker
   ansible.builtin.unarchive:
-    src: /tmp/lazydocker_0.21.1_Linux_arm64.tar.gz
+    src: /home/castro/lazydocker_0.21.1_Linux_arm64.tar.gz
     dest: /usr/local/bin
     remote_src: yes
 

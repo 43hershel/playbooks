@@ -2,6 +2,7 @@
 - name: Bagira restore playbook
   hosts: my_vm
   become: yes  # Run tasks with sudo
+  ignore_errors: yes
 
   roles: 
     - update

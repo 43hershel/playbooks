@@ -63,3 +63,8 @@
       community.general.homebrew:
         name: lf  
         state: present
+
+    - name: Installing zoom
+      community.general.homebrew:
+        name: zoom  
+        state: present

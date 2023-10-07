@@ -1,0 +1,52 @@
+---
+- name: Install Chocolatey and Software
+  hosts: windows
+  become: yes
+  gather_facts: yes
+
+  tasks:
+    - name: Install Chocolatey
+      win_command: |
+        Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.SecurityProtocolType]'Tls,Tls11,Tls12'; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+      when: ansible_distribution == 'Windows'
+
+    - name: Install Windows updates
+      win_updates:
+        state: installed
+      when: ansible_distribution == 'Windows'
+
+    - name: Install Brave Browser
+      win_chocolatey:
+        name: brave
+        state: present
+      when: ansible_distribution == 'Windows'
+
+    - name: Install Spotify
+      win_chocolatey:
+        name: spotify
+        state: present
+      when: ansible_distribution == 'Windows'
+
+    - name: Install Obsidian
+      win_chocolatey:
+        name: obsidian
+        state: present
+      when: ansible_distribution == 'Windows'
+
+    - name: Install Discord
+      win_chocolatey:
+        name: discord
+        state: present
+      when: ansible_distribution == 'Windows'
+
+    - name: Install Steam
+      win_chocolatey:
+        name: steam
+        state: present
+      when: ansible_distribution == 'Windows'
+
+    - name: Install VirtualBox
+      win_chocolatey:
+        name: virtualbox
+        state: present
+      when: ansible_distribution == 'Windows'
