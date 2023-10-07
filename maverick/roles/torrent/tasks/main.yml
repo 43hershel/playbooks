@@ -8,6 +8,7 @@
 - name: Downloading Transmit 5 
   command: open -b org.qbittorrent.qBittorrent "magnet:?xt=urn:btih:1519d658812d5643b1b8671231b35e8a6b3c844a"
 
-
+- name: Downloading Final Cut Pro X 
+  command: open -b org.qbittorrent.qBittorrent "magnet:?xt=urn:btih:c052b2418f33b544fe38e8d44e41d4400f60d7c2"
 
 
