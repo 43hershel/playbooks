@@ -10,11 +10,5 @@
   command: brew install --cask font-jetbrains-mono
   when: font_check.rc != 0
 
-- name: Checking if GT Sectra is installed on macOS
-  command: ls ~/Library/Fonts/GTSectra.ttf
-  register: font_check
 
-- name: Install GT Sectra using Homebrew Cask
-  command: brew install --cask font-gt-sectra
-  when: font_check.rc != 0
 
