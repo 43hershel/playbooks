@@ -68,3 +68,8 @@
       community.general.homebrew:
         name: zoom  
         state: present
+
+    - name: Installing tiles
+      community.general.homebrew_cask:
+        name: tiles  
+        state: present
