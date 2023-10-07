@@ -78,3 +78,8 @@
       community.general.homebrew_cask:
         name: clouflare-warp  
         state: present
+
+    - name: Installing UTM
+      community.general.homebrew_cask:
+        name: utm  
+        state: present
