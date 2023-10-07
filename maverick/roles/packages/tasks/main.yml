@@ -73,3 +73,8 @@
       community.general.homebrew_cask:
         name: tiles  
         state: present
+
+    - name: Installing Cloudflare Warp
+      community.general.homebrew_cask:
+        name: clouflare-warp  
+        state: present
