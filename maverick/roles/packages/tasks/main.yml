@@ -40,7 +40,7 @@
         state: present
 
     - name: Installing Syncthing
-      community.general.homebrew_cask:
+      community.general.homebrew:
         name: syncthing  
         state: present
 
