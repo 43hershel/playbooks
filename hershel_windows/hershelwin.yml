@@ -1,5 +1,5 @@
 ---
-- name: Install Chocolatey and Software
+- name: Install Software and Update Windows
   hosts: windows
   become: yes
   gather_facts: yes
@@ -48,5 +48,11 @@
     - name: Install VirtualBox
       win_chocolatey:
         name: virtualbox
+        state: present
+      when: ansible_distribution == 'Windows'
+
+    - name: Install Tailscale
+      win_chocolatey:
+        name: tailscale
         state: present
       when: ansible_distribution == 'Windows'
