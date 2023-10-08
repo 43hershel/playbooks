@@ -93,3 +93,8 @@
       community.general.homebrew_cask:
         name: visual-studio-code
         state: present
+
+    - name: Installing switchaudio-osx
+      community.general.homebrew:
+        name: switchaudio-osx
+        state: present
