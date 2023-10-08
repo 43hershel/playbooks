@@ -1,4 +1,7 @@
 ---
+- name: Change the user's shell to Zsh
+  command: chsh -s /bin/zsh {{ lookup('pipe', 'whoami') }}
+
 - name: Check if Oh My Zsh directory exists
   stat:
     path: ~/.oh-my-zsh
@@ -14,10 +17,6 @@
 - name: Install Oh My Zsh if not installed
   command: >
     /bin/bash /tmp/ohmyzsh_install.sh
-  when: ohmyzsh_stat.stat.exists == false
-
-- name: Change the user's shell to Zsh
-  command: chsh -s /bin/zsh {{ lookup('pipe', 'whoami') }}
   when: ohmyzsh_stat.stat.exists == false
 
 - name: Source the .zshrc file
