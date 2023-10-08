@@ -5,13 +5,18 @@
         state: present    
 
     - name: Installing Brave Browser
-      community.general.homebrew:
+      community.general.homebrew_cask:
         name: brave-browser
         state: present  
 
     - name: Installing Spotify
       community.general.homebrew_cask:
         name: spotify
+        state: present
+  
+    - name: Installing Obsidian
+      community.general.homebrew_cask:
+        name: obsidian
         state: present
 
     - name: Installing qbittorrent
@@ -40,7 +45,7 @@
         state: present
 
     - name: Installing Syncthing
-      community.general.homebrew:
+      community.general.homebrew_cask:
         name: syncthing  
         state: present
 
@@ -65,7 +70,7 @@
         state: present
 
     - name: Installing zoom
-      community.general.homebrew:
+      community.general.homebrew_cask:
         name: zoom  
         state: present
 
@@ -76,10 +81,15 @@
 
     - name: Installing Cloudflare Warp
       community.general.homebrew_cask:
-        name: clouflare-warp  
+        name: cloudflare-warp  
         state: present
 
     - name: Installing UTM
       community.general.homebrew_cask:
         name: utm  
+        state: present
+
+    - name: Installing VS Code
+      community.general.homebrew_cask:
+        name: visual-studio-code
         state: present

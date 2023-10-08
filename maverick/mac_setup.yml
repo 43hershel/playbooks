@@ -5,13 +5,13 @@
   ignore_errors: yes
 
   roles: 
-    - homebrew
-    - packages
-    - app_store
+#    - homebrew
+#    - packages
+#    - app_store
     - terminal
-    - fonts
+#    - fonts
 #    - torrent
-    - geerlingguy.mac.dock
+#    - geerlingguy.mac.dock
 
 
 

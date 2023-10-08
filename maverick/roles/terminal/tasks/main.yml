@@ -1,10 +1,9 @@
 ---
-  - name: Determine user's home directory
-    command: echo $HOME
-    register: user_home
+- name: Check if Oh My Zsh is installed
+  shell: "[ -d {{ ansible_env.HOME }}/.oh-my-zsh ]"
+  register: oh_my_zsh_installed
+  changed_when: false
 
-  - name: Download and install Oh My Zsh
-    command: sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-    args:
-      creates: "{{ user_home.stdout }}/.oh-my-zsh"  # Check if Oh My Zsh is already installed
-
+- name: Install Oh My Zsh
+  command: "/bin/bash -c 'sh -c \"$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)\"'"
+  when: oh_my_zsh_installed.failed
