@@ -7,25 +7,34 @@ Ansible playbooks for system set-up and provisioning servers and computers.
 
 **Important note**: This playbook is based on the incredible guide by Jeff Geerling, and many of the roles and base configurations are from him. Check the original guide here: https://github.com/geerlingguy/mac-dev-playbook. Aside from that, I do not encourage copying the playbook or downloading pirated software.  
 
-## maverick
+## maverick - macOS Sonoma 
 Requirements and my current specifications.
 
 My playbook is based on the M1 13" Macbook Pro. Things are suited for the ARM arquicteture working currently in the lastest build of macOS Ventura. Soon trying a fresh install in macOS Sonoma. Intel build may vary with some configuration. 
 
 ### Instructions 
-1. Create a local account and sign in to iCloud and Apple Store. 
 
-2. Ensure Apple's command line tools are installed (`xcode-select --install` to launch the installer).
+Before starting this, make sure you created a user and that you are signed into iCloud.  
 
-3. Install and upgrade python and ansible. 
-    1. Run the following command to add Python 3 to your `$PATH: export PATH="$HOME/Library/Python/3.9/bin:/opt/homebrew/bin:$PATH"`
-    2. Upgrade Pip: `sudo pip3 install --upgrade pip`
-    3. Install Ansible: `pip3 install ansible`
-    4. Install Ansible galaxy roles with the `requirements.yml` file. 
-        `ansible-galaxy role install -r requirements.yml`
+1. Install developer tools `xcode-select --install` .
+2. Change the shell from bash to zsh with the following command: `chsh -s /bin/zsh <username>` .
+3. Then install Oh My Zsh with the following command: `sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"`(maybe you might need to change the PATH in the `.zhsrc` file).
+4. Install python, ugprade pip and install ansible. 
+5. Install homebrew package manger with the following command: 
+    I. `sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"` .
+    II. DON'T FORGET TO EXECUTE THE LAST 2 COMMANDS TO ADD THE PATH.
+6. Install the requirements with the following command `ansible-galaxy install -r requirements.yml` .
+7. Execute the `mac_setup.yml` playbook with the following command: `ansible-playbook mac_setup.yml --ask-become-pass` .
+8. Add the last files to their places from the `/files` directory.
 
-4. Execute mac_setup.yml. (Ensure the roles are not commented.)
+## hershel - Windows 10/11 
+Requirements and my current specifications.
 
+Old Intel i7 4790S with a GTX 745. Anything with Windows 10 + 11 will work no problem. 
 
+### Instructions 
+1. Update your system.
+2. Go to the Microsoft Store and search for `winget` --> Download the `App Installer` app. 
+3. Execute the script (**note**: the script also contains the download of to Linux ISOs, Fedora and NIX. Use CTRL + C to abort the process as shown in the install script)
 
 
