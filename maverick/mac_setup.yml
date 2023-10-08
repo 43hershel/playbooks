@@ -6,9 +6,9 @@
 
   roles: 
 #    - homebrew
+#    - terminal
 #    - packages
 #    - app_store
-    - terminal
 #    - fonts
 #    - torrent
 #    - geerlingguy.mac.dock
