@@ -1,9 +1,27 @@
 ---
-- name: Check if Oh My Zsh is installed
-  shell: "[ -d {{ ansible_env.HOME }}/.oh-my-zsh ]"
-  register: oh_my_zsh_installed
+- name: Check if Oh My Zsh directory exists
+  stat:
+    path: ~/.oh-my-zsh
+  register: ohmyzsh_stat
   changed_when: false
 
-- name: Install Oh My Zsh
-  command: "/bin/bash -c 'sh -c \"$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)\"'"
-  when: oh_my_zsh_installed.failed
+- name: Download Oh My Zsh installation script
+  get_url:
+    url: https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
+    dest: /tmp/ohmyzsh_install.sh
+  when: ohmyzsh_stat.stat.exists == false
+
+- name: Install Oh My Zsh if not installed
+  command: >
+    /bin/bash /tmp/ohmyzsh_install.sh
+  when: ohmyzsh_stat.stat.exists == false
+
+- name: Change the user's shell to Zsh
+  command: chsh -s /bin/zsh {{ lookup('pipe', 'whoami') }}
+  when: ohmyzsh_stat.stat.exists == false
+
+- name: Source the .zshrc file
+  shell: source ~/.zshrc
+  args:
+    executable: /bin/zsh
+  when: ohmyzsh_stat.stat.exists == false
