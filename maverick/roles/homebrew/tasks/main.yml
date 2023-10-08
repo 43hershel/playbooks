@@ -8,3 +8,14 @@
     command: >
       /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
     when: brew_installed.rc != 0
+
+  - name: Changes path 1
+    command: >
+      echo 'eval "$(/opt/homebrew/bin/brew shellenv)"') >> /Users/castro/.zprofile
+    when: brew_installed.rc != 0
+
+  - name: Change path 2
+    command: >
+      eval "$(/opt/homebrew/bin/brew shellenv)"
+    when: brew_installed.rc != 0
+
