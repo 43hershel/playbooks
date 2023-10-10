@@ -28,8 +28,9 @@ chsh -s /bin/zsh <username>
 
 3. Then install Oh My Zsh with the following command: 
 ```sh 
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"`(maybe you might need to change the PATH in the `.zhsrc` file)
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"`
 ```
+**note**: maybe you might need to change the PATH in the `.zhsrc` file
 
 4. Install python, ugprade pip and install ansible. 
 
