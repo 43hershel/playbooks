@@ -25,7 +25,7 @@ xcode-select --install
 
 2. Change the shell from bash to zsh with the following command: 
 ```sh
-chsh -s /bin/zsh <username>
+chsh -s /bin/zsh
 ``` 
 
 3. Then install Oh My Zsh with the following command: 
