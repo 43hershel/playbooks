@@ -34,7 +34,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 ```
 **note**: maybe you might need to change the PATH in the `.zhsrc` file
 
-4. Install python, ugprade pip and install ansible. 
+4. Install python, ugprade pip and install ansible. Check [this](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html#installing-and-upgrading-ansible-with-pip) guide out. 
 
 5. Install homebrew package manger with the following command: 
 I.
