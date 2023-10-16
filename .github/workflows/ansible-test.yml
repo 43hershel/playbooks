@@ -24,4 +24,4 @@ jobs:
         run: pip3 install ansible
 
       - name: Run Ansible Playbook
-        run: ansible-playbook -i inventory.ini mac-setup.yml
+        run: ansible-playbook -i inventory.ini playbooks/maverick/mac-setup.yml
