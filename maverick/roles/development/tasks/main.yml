@@ -1,0 +1,5 @@
+---
+  - name: Clone the Git repository
+    git:
+      repo: https://github.com/43hershel/cAstroweb
+      dest: /Users/castro/Documents
