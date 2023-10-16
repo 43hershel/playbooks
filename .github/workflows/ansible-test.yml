@@ -7,19 +7,21 @@ on:
 
 jobs:
   test:
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Set up Python
-        uses: actions/setup-python@v2
-        with:
-          python-version: 3.11
+      - name: Install Python
+        run: |
+          brew install python
+          python3 -m ensurepip
+          python3 -m pip install --upgrade pip
+        shell: bash
 
       - name: Install Ansible
-        run: pip install ansible
+        run: pip3 install ansible
 
       - name: Run Ansible Playbook
         run: ansible-playbook -i inventory.ini mac-setup.yml
