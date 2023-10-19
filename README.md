@@ -12,7 +12,7 @@ Aside from that, I do not encourage copying the playbook or downloading pirated 
 ## maverick - macOS Sonoma 
 Requirements and my current specifications.
 
-My playbook is based on the M1 13" Macbook Pro. Installation is suited for the ARM arquicteture working currently in the lastest build of macOS Sonoma. Soon trying a fresh install in macOS Sonoma. Intel build may vary with some configuration. 
+My playbook is based on the M1 13" Macbook Pro. Installation is suited for the ARM arquicteture working currently in the lastest build of macOS Ventura & Sonoma. Intel build may vary with some configuration. 
 
 ### Instructions 
 
