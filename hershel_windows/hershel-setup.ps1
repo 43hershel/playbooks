@@ -38,6 +38,13 @@ foreach ($package in $packages) {
 }
 
 Write-Host "Packages installation completed."
+Write-Host "Removing pinned items on the task bar"
+
+Remove-Item -Path "$env:APPDATA\Microsoft\Internet Explorer\Quick Launch\User Pinned\TaskBar\*" -Force -Recurse -ErrorAction SilentlyContinue
+Remove-Item -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Taskband" -Force -Recurse -ErrorAction SilentlyContinue
+Stop-Process -ProcessName explorer -Force
+Start-Process explorer
+
 
 Write-Host "Starting to download ISOs..."
 Write-Host "'Ctrl + C' to abort."
