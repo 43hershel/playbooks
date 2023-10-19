@@ -1,9 +1,0 @@
----
-- name: Check if Oh My Zsh is installed
-  shell: "[ -d {{ ansible_env.HOME }}/.oh-my-zsh ]"
-  register: oh_my_zsh_installed
-  changed_when: false
-
-- name: Install Oh My Zsh
-  command: "/bin/bash -c 'sh -c \"$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)\"'"
-  when: oh_my_zsh_installed.failed

@@ -11,4 +11,7 @@
 - name: Downloading Final Cut Pro X 
   command: open -b org.qbittorrent.qBittorrent "magnet:?xt=urn:btih:c052b2418f33b544fe38e8d44e41d4400f60d7c2"
 
+- name: Downloading Logic Pro X
+  command: open -b org.qbittorrent.qBittorrent "magnet:?xt=urn:btih:77ec395175dd847ab107d206b4e0cc18f2912e6d"
+
 

@@ -1,0 +1,27 @@
+name: Ansible Playbook Test
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install Python
+        run: |
+          brew install python
+          python3 -m ensurepip
+          python3 -m pip install --upgrade pip
+        shell: bash
+
+      - name: Install Ansible
+        run: pip3 install ansible
+
+      - name: Run Ansible Playbook
+        run: ansible-playbook -i inventory.ini playbooks/maverick/mac_setup.yml

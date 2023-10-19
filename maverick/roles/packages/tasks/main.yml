@@ -98,3 +98,8 @@
       community.general.homebrew:
         name: switchaudio-osx
         state: present
+
+    - name: Installing nodejs
+      community.general.homebrew:
+        name: node
+        state: present
