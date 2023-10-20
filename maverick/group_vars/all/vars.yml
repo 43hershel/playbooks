@@ -4,20 +4,20 @@ dockitems_persist:
     path: "/Applications/Utilities/Terminal.app/"
     pos: 1
 
-  - name: "Things"
-    path: "/Applications/Things3.app/"
+  - name: "Brave"
+    path: "/Applications/Brave\ Browser.app/"
     pos: 2
 
   - name: "Spotify"
     path: "/Applications/Spotify.app/"
     pos: 3
 
-  - name: "Brave"
-    path: "/Applications/Brave\ Browser.app/"
-    pos: 4
-
   - name: "Obsidian"
     path: "/Applications/Obsidian.app/"
+    pos: 4
+
+  - name: "Things"
+    path: "/Applications/Things3.app/"
     pos: 5
 
   - name: "Calendar"
