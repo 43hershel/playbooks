@@ -103,3 +103,8 @@
       community.general.homebrew:
         name: node
         state: present
+
+    - name: Installing stow
+      community.general.homebrew:
+        name: stow
+        state: present
