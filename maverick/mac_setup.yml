@@ -5,11 +5,12 @@
   ignore_errors: yes
 
   roles: 
-    - packages
-    - app_store
-    - fonts
-    - torrent
-    - geerlingguy.mac.dock
+#    - packages
+   - dotfiles
+#    - app_store
+#   - fonts
+#   - torrent
+#   - geerlingguy.mac.dock
 
 
 
