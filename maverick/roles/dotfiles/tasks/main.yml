@@ -3,6 +3,7 @@
   git:
     repo: https://github.com/43hershel/.dotfiles
     dest: /Users/castro/
+    update: yes
 
 - name: Cloning oh-my-zsh-autosuggestions
   git:
