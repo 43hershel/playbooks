@@ -1,16 +1,16 @@
 ---
 - name: macOS "maverick" set-up playbook
   hosts: localhost 
-  gather_facts: no
+  gather_facts: yes
   ignore_errors: yes
 
   roles: 
-#    - packages
+   - packages
    - dotfiles
-#    - app_store
-#   - fonts
-#   - torrent
-#   - geerlingguy.mac.dock
+   - app_store
+   - fonts
+   - torrent
+   - geerlingguy.mac.dock
 
 
 

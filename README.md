@@ -56,7 +56,11 @@ ansible-galaxy install -r requirements.yml
 ansible-playbook mac_setup.yml --ask-become-pass
 ```
 
-8. Add the last files to their respective destinations to their places from the `/files` directory.
+8. Source the shell
+```sh
+source .zshrc
+```
+9. Add the last files to their respective destinations to their places from the `/files` directory.
 
 ## hershel - Windows 10/11 
 Requirements and my current specifications.

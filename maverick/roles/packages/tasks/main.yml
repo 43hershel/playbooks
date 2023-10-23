@@ -108,3 +108,8 @@
       community.general.homebrew:
         name: stow
         state: present
+
+    - name: Installing fzf
+      community.general.homebrew:
+        name: fzf
+        state: present
