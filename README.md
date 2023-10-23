@@ -1,5 +1,5 @@
 # Playbooks
-[Ansible](https://www.ansible.com/) playbooks for system set-up and provisioning servers and computers.
+[Ansible](https://www.ansible.com/) playbooks for system set-up and provisioning servers.
 
 ## Index
 - maverick: provisioning and automating a macOS install.
