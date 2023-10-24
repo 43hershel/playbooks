@@ -72,7 +72,7 @@ Old Intel i7 4790S with a GTX 745. Anything with Windows 10 + 11 will work no pr
 2. Go to the Microsoft Store and search for `winget` --> Download the `App Installer` app. 
 3. Execute the script with right-click(**note**: the script also contains the download of to Linux ISOs, Fedora and NIX. Use CTRL + C to abort the process as shown in the install script)
 
-**Debloat**: You can also use the [Chris Titus Tech utility](https://github.com/ChrisTitusTech/winutil) with the following command. It also servers as an assitant to the app installation. I like to use my script better which is already configured. But for debloat purposes, Titus' script is great. 
+**Debloat**: You can also use the [Chris Titus Tech utility](https://github.com/ChrisTitusTech/winutil) with the following command. It also servers as an assitant to the app installation. I like to use my script better which is already configured. But for debloat purposes, Titus' script is great. You can also use [this guide](https://www.youtube.com/watch?v=6UQZ5oQg8XA) from this video. 
 
 ```powershell
 iwr -useb https://christitus.com/win | iex
