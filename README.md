@@ -62,7 +62,7 @@ source .zshrc
 ```
 9. Add the last files to their respective destinations to their places from the `/files` directory.
 
-> [!INFO] Remember to exchange the "control" and "Bloq Mayus" keys.
+> Remember to exchange the "control" and "Bloq Mayus" keys.
 
 ## hershel - Windows 10/11 
 Requirements and my current specifications.
