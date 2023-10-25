@@ -23,7 +23,8 @@ $packages = @(
     "Valve.Steam",
     "YuzuEmu.Yuzu.Mainline",
     "Discord.Discord",
-    "Balena.Etcher"
+    "Balena.Etcher",
+    "Microsoft.Powertoys",
 )
 
 Write-Host "Welcome to Heshel automatic set-up!"
