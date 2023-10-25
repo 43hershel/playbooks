@@ -1,7 +1,7 @@
 # Check if winget is already installed
 if (-Not (Get-Command winget -ErrorAction SilentlyContinue)) {
     # Download and install winget
-    Invoke-WebRequest -Uri 'https://aka.ms/winget-cli' -OutFile "$env:TEMP\winget-cli.msixbundle"
+    Invoke-WebRequest -Uri 'https://aka.ms/winget-cli' -OutFile "$env:TEMP\winget-cli.msix"
     Add-AppxPackage -Path "$env:TEMP\winget-cli.msixbundle"
     Start-Sleep -Seconds 5
     Remove-Item "$env:TEMP\winget-cli.msixbundle"
@@ -12,7 +12,7 @@ $packages = @(
     "Brave.Brave",
     "Spotify.Spotify",
     "Oracle.VirtualBox",
-    "Obsidian.Obsidian"
+    "Obsidian.Obsidian",
     "Microsoft.VisualStudioCode",
     "qBittorrent.qBittorrent",
     "Git.Git",
