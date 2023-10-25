@@ -72,6 +72,21 @@ Old Intel i7 4790S with a GTX 745. Anything with Windows 10 + 11 will work no pr
 2. Go to the Microsoft Store and search for `winget` --> Download the `App Installer` app. 
 3. Execute the script with right-click(**note**: the script also contains the download of to Linux ISOs, Fedora and NIX. Use CTRL + C to abort the process as shown in the install script)
 
+**For Windows 11**: By default, Windows 11 provides the execution policy of external scripts to `restricted`. To change this for the script to be able to initialize, you run the following commands in Powershell as administrator. 
+
+```powershell
+Get-ExecutionPolicy
+```
+
+```powershell
+Set-ExecutionPolicy RemoteSigned
+```
+Click `Y`. This should set the Windows 11 execution policy to RemoteSigned and therefore you would be able to execute the script no problem. 
+
+After go to the file --> Properties --> & click "Unblock". This will let the file run.
+
+**Working on a signature fix**
+
 **Debloat**: You can also use the [Chris Titus Tech utility](https://github.com/ChrisTitusTech/winutil) with the following command. It also servers as an assitant to the app installation. I like to use my script better which is already configured. But for debloat purposes, Titus' script is great. You can also use [this guide](https://www.youtube.com/watch?v=6UQZ5oQg8XA) from this video. 
 
 ```powershell
