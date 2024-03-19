@@ -14,27 +14,22 @@
     - git
     - neovim
     - tailscale
+    - golang
 
 - name: Create Documents directory
   file:
-    path: "/home/castro/Documents"
+    path: "/home/castro/Documents"  # Use the HOME environment variable to get the current user's home directory
     state: directory
-    owner: castro
-    group: castro
-    mode: '0755'
+    mode: 0755
 
 - name: Create Downloads directory
   file:
-    path: "/home/castro/Downloads"
+    path: "/home/castro/Downloads"  # Use the HOME environment variable to get the current user's home directory
     state: directory
-    owner: castro
-    group: castro
-    mode: '0755'
+    mode: 0755
 
 - name: Create notes directory
   file:
-    path: "/home/castro/notes"
+    path: "/home/castro/notes"  # Use the HOME environment variable to get the current user's home directory
     state: directory
-    owner: castro
-    group: castro
-    mode: '0755'
+    mode: 0755

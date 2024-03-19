@@ -113,3 +113,8 @@
       community.general.homebrew:
         name: fzf
         state: present
+
+    - name: Installing sshpass
+      community.general.homebrew:
+        name: sshpass
+        state: present

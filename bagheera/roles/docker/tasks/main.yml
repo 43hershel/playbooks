@@ -1,0 +1,14 @@
+---
+- name: Ensure the Docker group exists
+  group:
+    name: docker
+    state: present
+
+- name: Add castro to the Docker group
+  user:
+    name: "castro"
+    groups: docker  # Add the user to the Docker group
+    append: yes  # This appends the user to the group without removing them from other groups
+    
+- name: Download and execute lazydocker installation script
+  shell: curl https://raw.githubusercontent.com/jesseduffield/lazydocker/master/scripts/install_update_linux.sh | bash

@@ -1,0 +1,12 @@
+---
+- name: Copy Docker Compose file to the remote server
+  copy:
+    src: /Users/castro/Development/automation/playbooks/bagheera/files/docker-compose.yml
+    dest: /home/castro/Documents
+
+- name: Execute Docker Compose
+  docker_compose:
+    project_src: /home/castro/Documents
+    state: present
+  register: docker_output
+
