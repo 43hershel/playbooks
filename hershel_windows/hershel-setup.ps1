@@ -16,6 +16,7 @@ $packages = @(
     "Microsoft.VisualStudioCode",
     "qBittorrent.qBittorrent",
     "Git.Git",
+    "Bitwarden.Bitwarden",
     "Audient.EVO",
     "tailscale.tailscale",
     "7zip.7zip",
@@ -27,7 +28,7 @@ $packages = @(
     "Microsoft.Powertoys"
 )
 
-Write-Host "Welcome to Heshel automatic set-up!"
+Write-Host "Welcome to Hershel automatic set-up!"
 Start-Sleep -Seconds 2
 Write-Host "Starting package download..."
 Start-Sleep -Seconds 2
