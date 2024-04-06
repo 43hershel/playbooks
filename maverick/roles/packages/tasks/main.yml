@@ -118,3 +118,9 @@
       community.general.homebrew:
         name: sshpass
         state: present
+
+    - name: Installing iterm2
+      community.general.homebrew_cask:
+        name: iterm2
+        state: present
+
