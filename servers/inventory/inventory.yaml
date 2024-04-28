@@ -3,4 +3,4 @@
 
 [master:vars]
 ansible_ssh_user=castro
-ansible_ssh_pass=Zabacasbagira88!
+ansible_ssh_pass=
