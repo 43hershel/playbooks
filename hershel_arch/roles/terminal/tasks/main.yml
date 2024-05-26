@@ -1,0 +1,19 @@
+---
+- name: Install Zsh on Arch-based systems
+  pacman:
+    name: zsh
+    state: present
+  when: ansible_os_family == 'Archlinux'
+  
+- name: Change default shell to Zsh
+  user:
+    name: "{{ ansible_user }}"
+    shell: /bin/zsh
+
+- name: Verify the shell change
+  command: chsh -s /bin/zsh "{{ ansible_user }}"
+  register: shell_change
+
+- name: Show result
+  debug:
+    var: shell_change

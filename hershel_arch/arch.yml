@@ -1,0 +1,16 @@
+--- 
+- name: Setting up Hershel on Arch
+  hosts: localhost
+  gather_facts: yes
+  become: yes
+  ignore_errors: yes
+  vars:
+    ansible_user: castro
+
+  roles: 
+  - update
+  - AUR
+  - packages
+  - services
+  - fonts
+  - terminal

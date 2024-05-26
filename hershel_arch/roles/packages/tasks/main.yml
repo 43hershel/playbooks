@@ -1,0 +1,68 @@
+---
+- name: Installing brave
+  kewlfft.aur.aur:
+    use: yay
+    name:
+      - brave-bin
+
+- name: Installing vscode
+  kewlfft.aur.aur:
+    use: yay
+    name:
+      - visual-studio-code-bin
+
+- name: Installing obsidian
+  kewlfft.aur.aur:
+    use: yay
+    name:
+      - obsidian
+
+- name: Installing spotify
+  kewlfft.aur.aur:
+    use: yay
+    name:
+      - spotify
+
+- name: Installing bitwarden
+  kewlfft.aur.aur:
+    use: yay
+    name:
+      - bitwarden
+
+- name: Installing discord
+  kewlfft.aur.aur:
+    use: yay
+    name:
+      - discord
+
+- name: Installing neovim
+  kewlfft.aur.aur:
+    use: yay
+    name:
+      - neovim
+
+- name: Installing syncthing
+  kewlfft.aur.aur:
+    use: yay
+    name:
+      - syncthing
+
+- name: Installing tailscale
+  kewlfft.aur.aur:
+    use: yay
+    name:
+      - tailscale
+
+- name: Installing docker
+  kewlfft.aur.aur:
+    use: yay
+    name:
+      - docker
+
+- name: Installing git
+  kewlfft.aur.aur:
+    use: yay
+    name:
+      - git
+
+

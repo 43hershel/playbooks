@@ -1,0 +1,12 @@
+---
+- name: Installing JetBrains Mono
+  kewlfft.aur.aur:
+    use: yay
+    name:
+      - ttf-jetbrains-mono
+
+- name: Installing Noto Fonts CJK
+  kewlfft.aur.aur:
+    use: yay
+    name:
+      - noto-fonts-cjk 
