@@ -19,27 +19,8 @@
       id: 946399090 
       state: present
 
-  - name: Installing Slack
-    community.general.mas:
-      id: 803453959
-      state: present
-
   - name: Installing Pages
     community.general.mas:
       id: 409201541
       state: present
 
-  - name: Installing Numbers
-    community.general.mas:
-      id: 409203825
-      state: present
-
-  - name: Installing Keynote
-    community.general.mas:
-      id: 409183694
-      state: present
-
-  - name: Installing Spark
-    community.general.mas:
-      id: 1176895641
-      state: present

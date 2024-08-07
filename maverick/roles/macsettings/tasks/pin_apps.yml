@@ -1,0 +1,18 @@
+---
+- name: Define the list of apps to pin
+  set_fact:
+    apps:
+      - Kitty
+      - Things3
+      - Brave Browser
+      - Obsidian
+      - Spotify
+
+- name: Pin apps to the dock
+  command: >
+    defaults write com.apple.dock persistent-apps -array-add
+    "<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>/Applications/{{ item }}.app</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>"
+  with_items: "{{ apps }}"
+
+- name: Restart Dock to apply changes
+  command: killall Dock

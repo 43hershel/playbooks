@@ -1,0 +1,6 @@
+---
+- name: Hide the menu bar
+  command: defaults write NSGlobalDomain _HIHideMenuBar -bool true
+
+- name: Restart Finder to apply changes
+  command: killall Finder

@@ -34,11 +34,6 @@
         name: docker
         state: present    
 
-    - name: Installing Tmux
-      community.general.homebrew:
-        name: tmux
-        state: present  
-
     - name: Installing Neovim
       community.general.homebrew:
         name: neovim
@@ -54,44 +49,9 @@
         name: appcleaner  
         state: present
 
-    - name: Installing Cyberduck
-      community.general.homebrew_cask:
-        name: cyberduck  
-        state: present
-
     - name: Installing OBS
       community.general.homebrew_cask:
         name: obs  
-        state: present
-
-    - name: Installing lf
-      community.general.homebrew:
-        name: lf  
-        state: present
-
-    - name: Installing zoom
-      community.general.homebrew_cask:
-        name: zoom  
-        state: present
-
-    - name: Installing tiles
-      community.general.homebrew_cask:
-        name: tiles  
-        state: present
-
-    - name: Installing Cloudflare Warp
-      community.general.homebrew_cask:
-        name: cloudflare-warp  
-        state: present
-
-    - name: Installing UTM
-      community.general.homebrew_cask:
-        name: utm  
-        state: present
-
-    - name: Installing VS Code
-      community.general.homebrew_cask:
-        name: visual-studio-code
         state: present
 
     - name: Installing switchaudio-osx
@@ -119,8 +79,8 @@
         name: sshpass
         state: present
 
-    - name: Installing iterm2
+    - name: Installing kitty
       community.general.homebrew_cask:
-        name: iterm2
+        name: kitty
         state: present
 

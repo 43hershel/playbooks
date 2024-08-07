@@ -1,0 +1,12 @@
+---
+- name: Include configure_dock tasks
+  include_tasks: configure_dock.yml
+
+- name: Include pin_apps tasks
+  include_tasks: pin_apps.yml
+
+- name: Include hide_menu_bar tasks
+  include_tasks: hide_menu_bar.yml
+
+- name: Include dark mode tasks
+  include_tasks: dark_mode.yml

@@ -1,0 +1,10 @@
+---
+- name: Remove all pinned apps from the dock
+  command: defaults write com.apple.dock persistent-apps -array
+
+- name: Make the dock automatically hide
+  command: defaults write com.apple.dock autohide -bool true
+
+- name: Restart Dock to apply changes
+  command: killall Dock
+
