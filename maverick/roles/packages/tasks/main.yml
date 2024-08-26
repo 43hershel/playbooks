@@ -84,3 +84,7 @@
         name: kitty
         state: present
 
+    - name: Installing yt-dlp
+      community.general.homebrew:
+        name: yt-dlp
+        state: present
