@@ -88,3 +88,10 @@
       community.general.homebrew:
         name: yt-dlp
         state: present
+
+    - name: Installing ente-auth
+      community.general.homebrew_cask:
+        name: ente-auth
+        state: present
+
+
